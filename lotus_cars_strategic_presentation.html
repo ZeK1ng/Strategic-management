@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus Cars Strategic Presentation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat and Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #0A0A0A;
+            color: #FFFFFF;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Custom British Racing Green & Gold branding */
+        .color-brg { color: #00E676; /* Vibrant highlight for dark background */ }
+        .bg-brg { background-color: #004225; }
+        .border-brg { border-color: #004225; }
+        .text-gold { color: #C9A84C; }
+        .bg-gold { background-color: #C9A84C; }
+        .border-gold { border-color: #C9A84C; }
+        
+        /* Slide styling */
+        .slide-container {
+            aspect-ratio: 16 / 9;
+            max-height: 80vh;
+        }
+        
+        /* Hide scrollbars but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- Top Navigation Header -->
+    <header class="bg-[#0e0e0e] border-b border-[#1f1f1f] px-6 py-4 flex justify-between items-center z-10">
+        <div class="flex items-center gap-3">
+            <!-- Custom Lotus Emblem SVG -->
+            <svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="#004225" stroke="#C9A84C" stroke-width="3"/>
+                <path d="M50 8C26.8 8 8 26.8 8 50C8 73.2 26.8 92 50 92C73.2 92 92 73.2 92 50C92 26.8 73.2 8 50 8ZM50 82C32.3 82 18 67.7 18 50C18 32.3 32.3 18 50 18C67.7 18 82 32.3 82 50C82 67.7 67.7 82 50 82Z" fill="#C9A84C"/>
+                <text x="50" y="55" font-family="'Montserrat', sans-serif" font-weight="800" font-size="16" fill="#C9A84C" text-anchor="middle">LOTUS</text>
+            </svg>
+            <div>
+                <h1 class="text-xs tracking-widest text-gold uppercase font-bold">Lotus Technology Inc. (NASDAQ: LOT)</h1>
+                <p class="text-lg font-bold text-white tracking-tight">Strategic Management Analysis</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-400 mr-2 font-mono">Presenters: Davit Goginashvili</span>
+            <button id="speaker-notes-toggle" class="bg-zinc-800 hover:bg-zinc-700 text-gold px-3.5 py-1.5 rounded text-xs font-semibold flex items-center gap-2 transition-all">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                <span>Speaker Notes (ON)</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Workspace Container -->
+    <main class="flex-1 flex flex-col xl:flex-row items-center justify-center p-4 xl:p-8 gap-6 max-w-[1800px] mx-auto w-full">
+        
+        <!-- Interactive Slideshow Area -->
+        <div class="w-full xl:w-[75%] flex flex-col gap-4">
+            <!-- The Slide Frame -->
+            <div class="slide-container w-full bg-[#0F0F0F] border border-zinc-800 rounded-xl shadow-2xl relative overflow-hidden flex flex-col justify-between p-6 md:p-12 transition-all duration-300">
+                
+                <!-- Slide Background Accent Grid -->
+                <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#C9A84C 1.5px, transparent 1.5px); background-size: 24px 24px;"></div>
+                
+                <!-- Active Slide Content Insertion -->
+                <div id="slide-viewport" class="relative z-10 w-full h-full flex flex-col justify-between">
+                    <!-- Dynamic Slide Elements Inject here -->
+                </div>
+
+                <!-- Slide Footer Decorator -->
+                <div class="absolute bottom-4 left-6 right-6 flex justify-between items-center text-[10px] text-zinc-500 font-mono tracking-widest uppercase pointer-events-none border-t border-zinc-900 pt-2 z-10">
+                    <span>Lotus Strategic Review — Academic Case Study</span>
+                    <span id="slide-indicator">Slide 1 of 12</span>
+                </div>
+            </div>
+
+            <!-- Presenter Navigation Controls -->
+            <div class="bg-[#121212] border border-zinc-800 rounded-lg p-3 flex justify-between items-center flex-wrap gap-4">
+                <div class="flex items-center gap-2">
+                    <button id="prev-btn" class="bg-zinc-800 hover:bg-zinc-700 text-white p-2.5 rounded-lg disabled:opacity-30 transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="next-btn" class="bg-zinc-800 hover:bg-zinc-700 text-white p-2.5 rounded-lg disabled:opacity-30 transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    <div class="h-6 w-px bg-zinc-800"></div>
+                    <span class="text-xs text-zinc-400 font-mono">Autoplay:</span>
+                    <button id="autoplay-btn" class="bg-zinc-800 hover:bg-zinc-700 text-gold px-3 py-1.5 rounded text-xs font-semibold">Play</button>
+                </div>
+                
+                <!-- Navigation Dots Slider -->
+                <div class="flex items-center gap-1.5 overflow-x-auto py-1 max-w-full">
+                    <!-- Populated dynamically -->
+                    <div id="nav-dots" class="flex gap-1.5"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Speaker Notes / Presenter Guide (Sidebar layout) -->
+        <div id="speaker-notes-panel" class="w-full xl:w-[25%] bg-[#121212] border border-zinc-800 rounded-xl p-5 flex flex-col self-stretch max-h-[85vh]">
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-3 mb-4">
+                <div class="flex items-center gap-2 text-gold">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    <h3 class="font-bold text-sm uppercase tracking-wider">Presenter Prompts</h3>
+                </div>
+                <span class="text-[10px] bg-zinc-800 px-2 py-0.5 rounded text-zinc-400 font-mono">12-15 Min Limit</span>
+            </div>
+            <div id="speaker-notes-content" class="flex-1 overflow-y-auto text-sm text-zinc-300 space-y-3 pr-2 scrollbar-thin scrollbar-thumb-zinc-800">
+                <!-- Injected dynamically -->
+            </div>
+            <div class="mt-4 pt-3 border-t border-zinc-800 flex justify-between items-center">
+                <span class="text-xs text-zinc-500">Timer: <span id="presentation-timer" class="font-mono text-zinc-400">00:00</span></span>
+                <button id="reset-timer" class="text-[10px] text-zinc-400 hover:text-white uppercase tracking-wider">Reset</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Global Presentation Scripts & Content DB -->
+    <script>
+        // Slides data containing HTML structure, logic configurations, and presenter speaker notes.
+        const SLIDES = [
+            {
+                id: 1,
+                title: "Lotus Title Slide",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (0:00 - 1:00)</strong><br/>
+                    • <strong>Opening Hook:</strong> Introduce yourself and start with a dramatic pause. "Lotus is a name synonymous with motorsport legend, but today we analyze its high-wire corporate transformation. It’s an iconic brand trying to bridge legacy weightlessness with battery-heavy EV tech."<br/>
+                    • <strong>Context:</strong> Explain that Lotus Cars (now Lotus Tech, NASDAQ: LOT) has been publicly traded since early 2024.<br/>
+                    • <strong>Goal:</strong> Today, we'll cover the SWOT, financial realities, the 2025 hybrid pivot, and decide if a $25,000 investment makes sense.
+                `,
+                html: `
+                    <div class="flex flex-col justify-between h-full py-6">
+                        <div class="space-y-2">
+                            <span class="text-xs text-gold uppercase tracking-widest font-semibold border-b border-gold/40 pb-1">Strategic Management Case Study</span>
+                            <h1 class="text-3xl md:text-5xl font-black text-white leading-tight">Lotus Cars: <br/><span class="text-gold">Driven by Legacy,</span> <br/>Challenged by the Future</h1>
+                            <p class="text-md md:text-xl text-zinc-400 font-light max-w-2xl mt-4">Strategic Management Analysis | Lotus Technology Inc. (NASDAQ: LOT)</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-end mt-4">
+                            <!-- Lotus Car Photo -->
+                            <div class="relative border border-zinc-800/80 rounded-lg overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent pointer-events-none z-10"></div>
+                                <img src="1.webp" alt="Lotus Exige" class="w-full h-full object-cover object-center" style="max-height: 160px;" />
+                                <span class="absolute bottom-2 right-3 text-[10px] text-zinc-300 uppercase tracking-widest z-20 drop-shadow">Lotus Exige</span>
+                            </div>
+                            
+                            <div class="flex flex-col justify-end text-left md:text-right">
+                                <span class="text-xs text-zinc-500 uppercase tracking-widest">Prepared by:</span>
+                                <span class="text-lg font-bold text-white tracking-wide">Davit Goginashvili</span>
+                                <span class="text-xs text-zinc-400 mt-1">Strategic Management | June 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 2,
+                title: "Company Overview",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (1:00 - 2:15)</strong><br/>
+                    • <strong>Heritage:</strong> Emphasize Colin Chapman’s philosophy "Simplify, then add lightness". Mention they won 7 Formula 1 constructor titles.<br/>
+                    • <strong>Geely Acquisition:</strong> Geely owns 51%+ (they also own Volvo, Polestar, Zeekr). This gives Lotus deep technology backing.<br/>
+                    • <strong>IPO:</strong> Highlight NASDAQ listing on Feb 23, 2024.<br/>
+                    • <strong>Product Range:</strong> Highlight the transition from Emira (last gas/petrol car) to EV hypercar Evija, Eletre SUV, and Emeya GT.
+                `,
+                html: `
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="border-b border-zinc-800 pb-3">
+                            <span class="text-xs text-gold uppercase tracking-widest font-bold">Background & DNA</span>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white">Who Is Lotus?</h2>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch my-auto">
+                            <!-- Left Column: Core Bullet details -->
+                            <div class="md:col-span-7 space-y-3 text-sm">
+                                <div class="flex items-start gap-3">
+                                    <span class="text-gold mt-1">⚡</span>
+                                    <p class="text-zinc-300"><strong class="text-white">Founded 1948:</strong> Initiated by visionary engineer Colin Chapman in North London, pioneering vehicle aerodynamics.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="text-gold mt-1">🏎️</span>
+                                    <p class="text-zinc-300"><strong class="text-white">F1 Dominance:</strong> Captured 7 F1 World Championships (1960s–70s), defining racing performance & engineering consulting.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="text-gold mt-1">🤝</span>
+                                    <p class="text-zinc-300"><strong class="text-white">Geely Holding Backup:</strong> Now majority-owned by Geely, enabling global manufacturing economies of scale.</p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="text-gold mt-1">📈</span>
+                                    <p class="text-zinc-300"><strong class="text-white">NASDAQ (LOT):</strong> Publicly listed on Feb 23, 2024, providing direct institutional capital access.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: Mission Callout and Mini Timeline -->
+                            <div class="md:col-span-5 flex flex-col justify-between gap-4">
+                                <div class="bg-gradient-to-br from-emerald-950/40 to-black p-4 border border-emerald-900/50 rounded-lg">
+                                    <span class="text-[10px] text-gold uppercase tracking-widest block mb-1 font-bold">Chapman's Philosophy</span>
+                                    <p class="italic text-zinc-100 text-sm">"Simplify, then add lightness."</p>
+                                    <p class="text-[11px] text-zinc-400 mt-2">Delivering pure driving pleasure through lightweight, high-performance, precision engineering.</p>
+                                </div>
+                                
+                                <div class="bg-zinc-900/50 p-4 border border-zinc-800 rounded-lg">
+                                    <span class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-2 font-bold font-mono">Modern Lineup Matrix</span>
+                                    <div class="grid grid-cols-2 gap-2 text-[10px] text-center">
+                                        <div class="p-1 bg-zinc-800 rounded"><span class="text-gold block font-bold">Emira</span> Petrol Coupe</div>
+                                        <div class="p-1 bg-zinc-800 rounded"><span class="text-gold block font-bold">Eletre</span> BEV SUV</div>
+                                        <div class="p-1 bg-zinc-800 rounded"><span class="text-gold block font-bold">Emeya</span> BEV GT</div>
+                                        <div class="p-1 bg-zinc-800 rounded"><span class="text-gold block font-bold">Evija</span> EV Hypercar</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Timeline -->
+                        <div class="w-full bg-zinc-900/70 p-3 rounded-lg border border-zinc-800/80 mt-2">
+                            <div class="grid grid-cols-6 gap-2 text-[10px] text-center text-zinc-400">
+                                <div class="border-r border-zinc-800"><span class="text-gold block font-bold">1948</span>Founded</div>
+                                <div class="border-r border-zinc-800"><span class="text-gold block font-bold">1963-78</span>7 F1 Titles</div>
+                                <div class="border-r border-zinc-800"><span class="text-gold block font-bold">2017</span>Geely Era</div>
+                                <div class="border-r border-zinc-800"><span class="text-gold block font-bold">2018</span>Vision80</div>
+                                <div class="border-r border-zinc-800"><span class="text-gold block font-bold">2024</span>NASDAQ IPO</div>
+                                <div><span class="text-gold block font-bold">2025</span>Strategic Pivot</div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 3,
+                title: "Strategic Plan: Vision80 & Pivot",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (2:15 - 3:30)</strong><br/>
+                    • <strong>Original Vision80:</strong> Launched in 2018. Goals: Go 100% all-electric by 2028 (80th anniversary). Launch key EV lines.<br/>
+                    • <strong>The 2025 Pivot:</strong> Explain the massive, painful reality check. The EV-only path had to be abandoned.<br/>
+                    • <strong>Why?</strong> Consumer EV adoption slowed. Uneven charging infrastructure. High tooling costs vs low margins.<br/>
+                    • <strong>The New Plan:</strong> BEV + PHEV + ICE hyper/sports cars. Introduce "For Me"/Eletre X PHEV in 2025.<br/>
+                    • <strong>Focus:</strong> Focused differentiation strategy. Premium, enthusiast-driven.
+                `,
+                html: `
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="border-b border-zinc-800 pb-3 flex justify-between items-center">
+                            <div>
+                                <span class="text-xs text-gold uppercase tracking-widest font-bold">Strategic Adaptation</span>
+                                <h2 class="text-2xl md:text-3xl font-extrabold text-white">Vision80 & The 2025 Pivot</h2>
+                            </div>
+                            <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] px-2 py-1 rounded font-mono font-bold">PHEV INCLUSION</span>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto text-sm">
+                            <!-- Left: Vision80 (Legacy Plan) -->
+                            <div class="bg-zinc-950 p-4 border border-zinc-800 rounded-lg relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-red-600"></div>
+                                <h3 class="text-white font-bold mb-3 flex items-center gap-2 text-xs uppercase tracking-widest text-zinc-400">
+                                    <span class="text-red-500">❌</span> Original Vision80 (2018 Plan)
+                                </h3>
+                                <ul class="space-y-2 text-xs text-zinc-400">
+                                    <li>• <strong class="text-zinc-300">100% Electric Roadmap:</strong> Complete abandonment of internal combustion engines (ICE) by 2028.</li>
+                                    <li>• <strong class="text-zinc-300">Pioneer Portfolio:</strong> Heavily subsidized EV hypercar Evija (2019) & heavy SUV Eletre (2022).</li>
+                                    <li>• <strong class="text-zinc-300">Brand Redefinition:</strong> Direct, unfiltered brand positioning as an ultra-luxury electric player.</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Right: The 2025 Pivot (Realistic Route) -->
+                            <div class="bg-zinc-900 p-4 border border-zinc-700 rounded-lg relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
+                                <h3 class="text-white font-bold mb-3 flex items-center gap-2 text-xs uppercase tracking-widest text-gold">
+                                    <span class="text-emerald-500">✔</span> The 2025 Strategic Pivot
+                                </h3>
+                                <ul class="space-y-2 text-xs text-zinc-300">
+                                    <li>• <strong class="text-white">Multi-Powertrain Flex:</strong> Abandoned pure-play EV; transitioned to "BEV + PHEV + ICE" mix.</li>
+                                    <li>• <strong class="text-white">Volume Target:</strong> Aiming for 30,000 units/year and positive cash flow by 2026.</li>
+                                    <li>• <strong class="text-white">2025 PHEV Additions:</strong> "For Me" (Eletre X PHEV) launched to hedge global infrastructure lags.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Competitive Strategy Callout -->
+                        <div class="bg-[#004225]/30 border border-emerald-900/80 p-3 rounded-lg flex items-center justify-between flex-wrap gap-2 text-xs mt-3">
+                            <span class="text-gold font-bold tracking-wider uppercase text-[10px]">Strategic Classification: Focused Differentiation</span>
+                            <span class="text-zinc-300 text-[11px]">Targeting affluent auto-enthusiasts, shielding Lotus from mass-market EV price wars (Emira from $105k; Evija hypercar $2.4m).</span>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 4,
+                title: "SWOT Analysis",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (3:30 - 4:45)</strong><br/>
+                    • <strong>Strengths (S):</strong> Point out S1 (handling) & S3 (Geely scale/capital). Lotus Engineering is growing fast (+69% rev in 2025).<br/>
+                    • <strong>Weaknesses (W):</strong> W1 is huge—only 200 stores globally vs. Porsche's 900+. Loss of $464M is unsustainable without parent help.<br/>
+                    • <strong>Opportunities (O):</strong> EV/Hybrid performance cars are up in key markets. F1 popularity is soaring.<br/>
+                    • <strong>Threats (T):</strong> Rival performance brands have much deeper pockets. Risk of investor abandonment if losses persist.
+                `,
+                html: `
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="border-b border-zinc-800 pb-3">
+                            <span class="text-xs text-gold uppercase tracking-widest font-bold">Situation Analysis</span>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white">SWOT Analysis: Real Strengths, Real Problems</h2>
+                        </div>
+                        
+                        <!-- 2x2 SWOT Grid -->
+                        <div class="grid grid-cols-2 gap-4 my-auto">
+                            <!-- STRENGTHS -->
+                            <div class="bg-emerald-950/20 border border-emerald-900/50 p-3 rounded-lg">
+                                <div class="flex items-center gap-1.5 mb-1.5 border-b border-emerald-900/30 pb-1">
+                                    <span class="text-emerald-400 font-bold text-xs">S</span>
+                                    <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Strengths</h4>
+                                </div>
+                                <ul class="text-[11px] text-zinc-300 space-y-1">
+                                    <li>• Lightweight handling expertise</li>
+                                    <li>• Historic motorsport pedigree</li>
+                                    <li>• Geely global capital & tech</li>
+                                    <li>• Engineering IP consultancy (+69%)</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- WEAKNESSES -->
+                            <div class="bg-red-950/10 border border-red-900/30 p-3 rounded-lg">
+                                <div class="flex items-center gap-1.5 mb-1.5 border-b border-red-900/20 pb-1">
+                                    <span class="text-red-400 font-bold text-xs">W</span>
+                                    <h4 class="text-xs font-bold text-red-400 uppercase tracking-widest">Weaknesses</h4>
+                                </div>
+                                <ul class="text-[11px] text-zinc-300 space-y-1">
+                                    <li>• Only ~200 globally (vs Porsche's 900+)</li>
+                                    <li>• Engine dependency on outside partners</li>
+                                    <li>• Severe net losses ($464M in FY25)</li>
+                                    <li>• Depressed luxury brand awareness</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- OPPORTUNITIES -->
+                            <div class="bg-blue-950/10 border border-blue-900/30 p-3 rounded-lg">
+                                <div class="flex items-center gap-1.5 mb-1.5 border-b border-blue-900/20 pb-1">
+                                    <span class="text-blue-400 font-bold text-xs">O</span>
+                                    <h4 class="text-xs font-bold text-blue-400 uppercase tracking-widest">Opportunities</h4>
+                                </div>
+                                <ul class="text-[11px] text-zinc-300 space-y-1">
+                                    <li>• High performance hybrid demand</li>
+                                    <li>• Untapped Chinese & Asian markets</li>
+                                    <li>• Rapidly growing global F1 popularity</li>
+                                    <li>• Government green EV incentives</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- THREATS -->
+                            <div class="bg-amber-950/10 border border-amber-900/30 p-3 rounded-lg">
+                                <div class="flex items-center gap-1.5 mb-1.5 border-b border-amber-900/20 pb-1">
+                                    <span class="text-amber-400 font-bold text-xs">T</span>
+                                    <h4 class="text-xs font-bold text-amber-400 uppercase tracking-widest">Threats</h4>
+                                </div>
+                                <ul class="text-[11px] text-zinc-300 space-y-1">
+                                    <li>• Dominating, cash-rich competitors</li>
+                                    <li>• Slow, bumpy public EV charging rollout</li>
+                                    <li>• Volatile battery/supply material costs</li>
+                                    <li>• Capital fatigue from continuous losses</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 5,
+                title: "Core & Distinctive Competencies",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (4:45 - 6:00)</strong><br/>
+                    • <strong>Distinctive Competency:</strong> Point out the highlighted quote. Lotus is the undisputed leader in extracting maximum dynamics from minimal weight.<br/>
+                    • <strong>Core Competencies:</strong> Highlight the 4 icons. 1. Lightweight architecture. 2. Legendary suspension tuning ("Lotus ride"). 3. EV platform expertise. 4. Lotus Engineering consultancy services.<br/>
+                    • <strong>Advantage:</strong> They don't sell generic tech gadgets. They sell pure, exclusive racing heritage, insulated from generic EV price wars.
+                `,
+                html: `
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="border-b border-zinc-800 pb-3">
+                            <span class="text-xs text-gold uppercase tracking-widest font-bold">Capabilities & Resources</span>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white">Core & Distinctive Competencies</h2>
+                        </div>
+                        
+                        <!-- Core Competency Badges -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-auto">
+                            <div class="bg-zinc-900 p-3 rounded-lg border border-zinc-800 text-center">
+                                <div class="text-2xl mb-1 text-gold">⚖️</div>
+                                <h4 class="text-xs font-bold text-white mb-1">Lightweighting</h4>
+                                <p class="text-[10px] text-zinc-400">Pioneers in high-strength composite mass reduction.</p>
+                            </div>
+                            <div class="bg-zinc-900 p-3 rounded-lg border border-zinc-800 text-center">
+                                <div class="text-2xl mb-1 text-gold">🏎️</div>
+                                <h4 class="text-xs font-bold text-white mb-1">Ride & Handling</h4>
+                                <p class="text-[10px] text-zinc-400">The "Lotus feel" – track suspension magic.</p>
+                            </div>
+                            <div class="bg-zinc-900 p-3 rounded-lg border border-zinc-800 text-center">
+                                <div class="text-2xl mb-1 text-gold">⚡</div>
+                                <h4 class="text-xs font-bold text-white mb-1">EV Platforms</h4>
+                                <p class="text-[10px] text-zinc-400">Highly customized lightweight skateboard architectures.</p>
+                            </div>
+                            <div class="bg-zinc-900 p-3 rounded-lg border border-zinc-800 text-center">
+                                <div class="text-2xl mb-1 text-gold">🔧</div>
+                                <h4 class="text-xs font-bold text-white mb-1">Engineering IP</h4>
+                                <p class="text-[10px] text-zinc-400">High-margin contract engineering for external OEMs.</p>
+                            </div>
+                        </div>
+
+                        <!-- Distinctive Competency (The Crown Jewel) -->
+                        <div class="bg-gradient-to-r from-amber-950/20 via-[#004225]/30 to-zinc-950 border border-gold/35 p-4 rounded-lg relative">
+                            <span class="absolute top-2 right-3 text-[9px] bg-gold/10 text-gold border border-gold/30 px-1.5 py-0.5 rounded font-mono font-bold">THE CORE ADVANTAGE</span>
+                            <p class="text-xs md:text-sm italic text-zinc-100 max-w-2xl leading-relaxed">
+                                "Extracting maximum driving dynamics from minimum mass — encoded in every decision since 1948. No competitor at this price point replicates this mechanical connection."
+                            </p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 6,
+                title: "Integration Strategies",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (6:00 - 7:15)</strong><br/>
+                    • <strong>Value Chain Control:</strong> Explain how Geely and Lotus coordinate.<br/>
+                    • <strong>Vertical Integration (Left):</strong> Backward integration via Geely's global supply networks for batteries. Forward integration via expanding retail locations directly to 200+ global boutique stores.<br/>
+                    • <strong>Horizontal Integration (Right):</strong> Under Geely's "One Geely" ecosystem, Lotus operates as the ultra-high performance halo, while Volvo does safety, Polestar does EV avant-garde, and Zeekr does premium tech luxury.
+                `,
+                html: `
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="border-b border-zinc-800 pb-3">
+                            <span class="text-xs text-gold uppercase tracking-widest font-bold">Value Chain Management</span>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white">How Lotus Controls Its Value Chain</h2>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto text-xs">
+                            <!-- Left: Vertical Integration -->
+                            <div class="bg-zinc-900 p-4 border border-zinc-800 rounded-lg space-y-3">
+                                <h3 class="text-gold font-bold uppercase tracking-wider text-xs flex items-center gap-2">
+                                    ⛓️ Vertical Integration (Up & Down Stream)
+                                </h3>
+                                <div class="space-y-2">
+                                    <p class="text-zinc-300">
+                                        <strong class="text-white">Backward Integration:</strong> Re-integrated Lotus UK engineering & Lotus Tech operations in April 2025. Utilizes Geely’s unified battery supply lines to save development overhead.
+                                    </p>
+                                    <p class="text-zinc-300">
+                                        <strong class="text-white">Forward Retail Control:</strong> Swapped franchise reliance for corporate flagship showrooms in prestigious luxury capitals (Seoul, London, Shanghai).
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Right: Horizontal Portfolio Play -->
+                            <div class="bg-zinc-900 p-4 border border-zinc-800 rounded-lg space-y-3">
+                                <h3 class="text-gold font-bold uppercase tracking-wider text-xs flex items-center gap-2">
+                                    🗺️ Horizontal Integration ("One Geely")
+                                </h3>
+                                <div class="space-y-2">
+                                    <p class="text-zinc-300">
+                                        <strong class="text-white">The Geely Synergy:</strong> Leverages technology shares between Volvo (safety systems), Polestar (premium EV engineering), and Zeekr (software stacks).
+                                    </p>
+                                    <p class="text-zinc-300">
+                                        <strong class="text-white">Market Extension:</strong> Transitioning from hardcore single sports cars to lucrative high-margin luxury crossovers (Type 134 compact SUV, Emeya performance sedan).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Visual Graphic Representing Portfolio Positioning -->
+                        <div class="bg-zinc-950 p-2 border border-zinc-800 rounded text-center text-[10px] text-zinc-500">
+                            <span class="text-zinc-400 font-bold uppercase tracking-widest block mb-1">Geely Portfolio Mapping</span>
+                            <div class="flex justify-around items-center">
+                                <span>Volvo (Safety/Utility)</span>
+                                <span class="text-gold font-bold">→</span>
+                                <span>Polestar (Design/Tech)</span>
+                                <span class="text-gold font-bold">→</span>
+                                <span class="text-gold font-bold bg-[#004225]/60 text-white px-2 py-0.5 rounded">Lotus (High-Performance Halo)</span>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 7,
+                title: "EFAS & IFAS Matrices",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (7:15 - 8:30)</strong><br/>
+                    • <strong>By the Numbers:</strong> These matrices measure the external response and internal capabilities.<br/>
+                    • <strong>EFAS (External Factor Analysis Summary):</strong> Score is 2.59. High opportunities in hybrid/EV demand and Asian growth are dragged down by intense luxury rivals (Porsche, Ferrari) and volatile material costs.<br/>
+                    • <strong>IFAS (Internal Factor Analysis Summary):</strong> Score is 2.64. Strong handling engineering and Geely backing are canceled out by retail network gaps and heavy debt/net losses.<br/>
+                    • <strong>Conclusion:</strong> Average score is 2.5. At ~2.6, Lotus is slightly above average, showing potential, but margins are razor-thin.
+                `,
+                html: `
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="border-b border-zinc-800 pb-2">
+                            <span class="text-xs text-gold uppercase tracking-widest font-bold">Quantitative Evaluation</span>
+                            <h2 class="text-xl md:text-2xl font-extrabold text-white">Strategic Matrices: EFAS & IFAS</h2>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto text-[9px] md:text-[11px]">
+                            <!-- EFAS Table -->
+                            <div class="bg-[#121212] border border-zinc-800 rounded-lg p-2">
+                                <h3 class="font-bold text-center text-emerald-400 uppercase tracking-wider mb-2">EFAS (External Factors)</h3>
+                                <table class="w-full text-left">
+                                    <thead>
+                                        <tr class="border-b border-zinc-800 text-zinc-500">
+                                            <th class="py-1">External Factor</th>
+                                            <th class="py-1 text-center">Wt</th>
+                                            <th class="py-1 text-center">Rt</th>
+                                            <th class="py-1 text-center">Score</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-zinc-900">
+                                        <tr class="bg-emerald-950/20"><td>O1: EV/Hybrid sports car demand</td><td class="text-center">0.15</td><td class="text-center">4</td><td class="text-center font-bold text-emerald-400">0.60</td></tr>
+                                        <tr><td>O2: Asian market expansion</td><td class="text-center">0.12</td><td class="text-center">3</td><td class="text-center">0.36</td></tr>
+                                        <tr class="bg-emerald-950/20"><td>O3: Motorsport heritage leverage</td><td class="text-center">0.10</td><td class="text-center">3</td><td class="text-center">0.30</td></tr>
+                                        <tr><td>T1: Heavy competition (Porsche)</td><td class="text-center">0.18</td><td class="text-center">2</td><td class="text-center">0.36</td></tr>
+                                        <tr class="bg-emerald-950/20"><td>T2: Uneven charging speed</td><td class="text-center">0.12</td><td class="text-center">2</td><td class="text-center">0.24</td></tr>
+                                        <tr><td>Other factors combined</td><td class="text-center">0.33</td><td class="text-center">-</td><td class="text-center">0.73</td></tr>
+                                        <tr class="font-bold border-t border-zinc-700 bg-zinc-900"><td class="py-1">TOTAL EFAS SCORE</td><td class="text-center">1.00</td><td class="text-center"></td><td class="text-center text-gold">2.59</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- IFAS Table -->
+                            <div class="bg-[#121212] border border-zinc-800 rounded-lg p-2">
+                                <h3 class="font-bold text-center text-blue-400 uppercase tracking-wider mb-2">IFAS (Internal Factors)</h3>
+                                <table class="w-full text-left">
+                                    <thead>
+                                        <tr class="border-b border-zinc-800 text-zinc-500">
+                                            <th class="py-1">Internal Factor</th>
+                                            <th class="py-1 text-center">Wt</th>
+                                            <th class="py-1 text-center">Rt</th>
+                                            <th class="py-1 text-center">Score</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-zinc-900">
+                                        <tr class="bg-emerald-950/20"><td>S1: Lightweight engineering DNA</td><td class="text-center">0.18</td><td class="text-center">4</td><td class="text-center font-bold text-emerald-400">0.72</td></tr>
+                                        <tr><td>S2: Motorsport heritage</td><td class="text-center">0.15</td><td class="text-center">4</td><td class="text-center">0.60</td></tr>
+                                        <tr class="bg-emerald-950/20"><td>S3: Geely production network</td><td class="text-center">0.13</td><td class="text-center">3</td><td class="text-center">0.39</td></tr>
+                                        <tr><td>W1: Limited boutique footprint</td><td class="text-center">0.18</td><td class="text-center">2</td><td class="text-center">0.36</td></tr>
+                                        <tr class="bg-emerald-950/20"><td>W3: Serious net operational losses</td><td class="text-center">0.10</td><td class="text-center">1</td><td class="text-center">0.10</td></tr>
+                                        <tr><td>Other factors combined</td><td class="text-center">0.26</td><td class="text-center">-</td><td class="text-center">0.47</td></tr>
+                                        <tr class="font-bold border-t border-zinc-700 bg-zinc-900"><td class="py-1">TOTAL IFAS SCORE</td><td class="text-center">1.00</td><td class="text-center"></td><td class="text-center text-gold">2.64</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Takeaway annotation -->
+                        <p class="text-[10px] text-zinc-400 text-center border-t border-zinc-900 pt-1.5">
+                            Both EFAS (<strong class="text-white">2.59</strong>) and IFAS (<strong class="text-white">2.64</strong>) are slightly above the 2.5 baseline. Conclusion: Lotus is structured appropriately, but lacks safety margin to withstand prolonged macroeconomic stagnation.
+                        </p>
+                    </div>
+                `
+            },
+            {
+                id: 8,
+                title: "Board & Management Structure",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (8:30 - 9:45)</strong><br/>
+                    • <strong>Ownership Chain:</strong> Geely owns the majority share, controlling the Lotus Technology NASDAQ shell.<br/>
+                    • <strong>The Board:</strong> Note the balance of Chinese operational management and independent Western specialists.<br/>
+                    • <strong>Donghui Li:</strong> Geely Executive Chairman. <br/>
+                    • <strong>Qingfeng Feng:</strong> CEO, bridging design with production.<br/>
+                    • <strong>James Rowan:</strong> Former Volvo CEO—his addition signals a real push for Western premium auto credibility.<br/>
+                    • <strong>CFO Update:</strong> Daxue Wang appointed CFO in April 2025 to tighten spending.
+                `,
+                html: `
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="border-b border-zinc-800 pb-3">
+                            <span class="text-xs text-gold uppercase tracking-widest font-bold">Corporate Governance</span>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white">Who Is Running Lotus?</h2>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-5 my-auto items-stretch">
+                            <!-- Left: Ownership Hierarchy -->
+                            <div class="md:col-span-4 bg-zinc-900 p-3 rounded-lg border border-zinc-800 flex flex-col justify-between text-xs">
+                                <div>
+                                    <span class="text-[10px] text-gold uppercase tracking-widest block font-bold">Control Structure</span>
+                                    <p class="font-bold text-white text-sm mt-1">Zhejiang Geely Group</p>
+                                    <p class="text-[11px] text-zinc-400">Majority stakeholder, strategic funding engine, manufacturing backup.</p>
+                                </div>
+                                <div class="my-2 text-center text-zinc-500 font-bold">⬇</div>
+                                <div class="bg-zinc-950 p-2 rounded border border-zinc-800">
+                                    <p class="font-bold text-gold text-xs">Lotus Technology Inc.</p>
+                                    <p class="text-[10px] text-zinc-400">NASDAQ Listed [LOT]</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Right: The Board Grid -->
+                            <div class="md:col-span-8 bg-zinc-950 p-3 rounded-lg border border-zinc-800 text-xs">
+                                <span class="text-[10px] text-zinc-400 uppercase tracking-widest block mb-2 font-mono">Board of Directors & Executives</span>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div class="p-2 bg-zinc-900 rounded border border-zinc-800/80">
+                                        <p class="font-bold text-white text-[11px]">Donghui Li</p>
+                                        <p class="text-[9px] text-gold">Chairman (Geely Exec)</p>
+                                    </div>
+                                    <div class="p-2 bg-zinc-900 rounded border border-zinc-800/80">
+                                        <p class="font-bold text-white text-[11px]">Qingfeng Feng</p>
+                                        <p class="text-[9px] text-gold">CEO & Director</p>
+                                    </div>
+                                    <div class="p-2 bg-zinc-900 rounded border border-zinc-800/80">
+                                        <p class="font-bold text-white text-[11px]">James Rowan</p>
+                                        <p class="text-[9px] text-gold">Director (ex-Volvo CEO)</p>
+                                    </div>
+                                    <div class="p-2 bg-zinc-900 rounded border border-zinc-800/80">
+                                        <p class="font-bold text-white text-[11px]">Daxue Wang</p>
+                                        <p class="text-[9px] text-gold">CFO (New Apr 2025)</p>
+                                    </div>
+                                    <div class="p-2 bg-zinc-900 rounded border border-zinc-800/80">
+                                        <p class="font-bold text-white text-[11px]">Matt Windle</p>
+                                        <p class="text-[9px] text-gold">UK Managing Director</p>
+                                    </div>
+                                    <div class="p-2 bg-zinc-900 rounded border border-zinc-800/80">
+                                        <p class="font-bold text-white text-[11px]">Catherine Cai</p>
+                                        <p class="text-[9px] text-gold">Independent Director</p>
+                                    </div>
+                                </div>
+                                <p class="text-[10px] text-zinc-500 italic mt-3">Governance Note: International cross-border structure allows quick logistics scaling but introduces cultural coordination hurdles.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 9,
+                title: "Financial Statements",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (9:45 - 11:00)</strong><br/>
+                    • <strong>Financial Reality check:</strong> Point out that deliveries and revenues dropped around 45% in 2025. It was a transitional model launch year.<br/>
+                    • <strong>The Good News:</strong> Losses are narrowing rapidly. Net loss improved by 58% ($1.1B loss reduced to $464M). Adjusted EBITDA is 63% better.<br/>
+                    • <strong>Gross Margin:</strong> Tripled from 3% to 9%. This shows that Geely supply scale is working.<br/>
+                    • <strong>Lotus Engineering:</strong> Intellectual property sales grew +69%. Contract engineering services are highly lucrative.<br/>
+                    • <strong>Stock price:</strong> LOT is hovering around $1.30. Dilution risk remains high.
+                `,
+                html: `
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="border-b border-zinc-800 pb-2 flex justify-between items-center">
+                            <div>
+                                <span class="text-xs text-gold uppercase tracking-widest font-bold">Financial Health</span>
+                                <h2 class="text-xl md:text-2xl font-extrabold text-white">The Numbers: Improving, But Not Fixed</h2>
+                            </div>
+                            <span class="text-[10px] bg-red-950/30 text-red-400 border border-red-900/50 px-2 py-0.5 rounded font-mono font-bold">LOSSES RECOVERING</span>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 my-auto items-center text-xs">
+                            <!-- Left: Comparison Table -->
+                            <div class="md:col-span-8 bg-[#121212] border border-zinc-800 rounded-lg p-2">
+                                <table class="w-full text-left">
+                                    <thead>
+                                        <tr class="border-b border-zinc-800 text-zinc-500 font-mono text-[9px]">
+                                            <th class="py-1">Financial Metric</th>
+                                            <th class="py-1 text-right">FY2024</th>
+                                            <th class="py-1 text-right">FY2025</th>
+                                            <th class="py-1 text-right">YoY % Change</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-zinc-900 text-[11px]">
+                                        <tr><td class="py-1">Retail Deliveries</td><td class="text-right text-zinc-400">12,134 units</td><td class="text-right text-white">6,520 units</td><td class="text-right text-red-500 font-bold">▼ 46%</td></tr>
+                                        <tr><td class="py-1">Net Revenue</td><td class="text-right text-zinc-400">$924 Million</td><td class="text-right text-white">$519 Million</td><td class="text-right text-red-500 font-bold">▼ 44%</td></tr>
+                                        <tr class="bg-emerald-950/20"><td class="py-1 font-bold">Gross Margin %</td><td class="text-right text-zinc-400">3.0%</td><td class="text-right text-emerald-400 font-bold">9.0%</td><td class="text-right text-emerald-400 font-bold">▲ +6.0% pp</td></tr>
+                                        <tr><td class="py-1">Operating Loss</td><td class="text-right text-zinc-400">($786M)</td><td class="text-right text-white">($423M)</td><td class="text-right text-emerald-400 font-bold">▲ +46% (Better)</td></tr>
+                                        <tr class="bg-emerald-950/10"><td class="py-1 font-bold">Net Loss</td><td class="text-right text-zinc-400">($1,107M)</td><td class="text-right text-emerald-400 font-bold">($464M)</td><td class="text-right text-emerald-400 font-bold">▲ +58% (Better)</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Right: Highlights & Visual KPIs -->
+                            <div class="md:col-span-4 space-y-3">
+                                <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-center">
+                                    <span class="text-[10px] text-zinc-400 uppercase tracking-widest block">Gross Margin</span>
+                                    <span class="text-3xl font-black text-gold">3% → 9%</span>
+                                    <p class="text-[10px] text-zinc-500 mt-1">Tripled on supply efficiencies</p>
+                                </div>
+                                <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-center">
+                                    <span class="text-[10px] text-emerald-400 uppercase tracking-widest block">IP Consulting Service</span>
+                                    <span class="text-xl font-bold text-emerald-400">+69% Growth</span>
+                                    <p class="text-[9px] text-zinc-500 mt-0.5">High margin engineering revenue</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stock Indicator Ticker -->
+                        <div class="bg-zinc-950 border border-zinc-900 p-2 rounded flex justify-between items-center text-[10px] text-zinc-500 font-mono">
+                            <span>NASDAQ: LOT</span>
+                            <span>Last Trade: <strong class="text-white">~$1.30</strong></span>
+                            <span>52-Wk Range: <strong class="text-zinc-400">$1.00 - $2.75</strong></span>
+                            <span>Analyst Consensus Target: <strong class="text-emerald-400">$2.40 (Hold)</strong></span>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 10,
+                title: "Investment Decision",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (11:00 - 12:15)</strong><br/>
+                    • <strong>The Big Question:</strong> Should we invest $25,000 in Lotus? Our firm recommendation is NO.<br/>
+                    • <strong>Why Not?</strong> Net losses exceed cash flow. Sales revenue dropped. High execution risk of turning around an automotive startup. Zero 'buy' recommendations from major investment banks.<br/>
+                    • <strong>The Bull Case:</strong> We must acknowledge that Geely won't let them crash, margins are improving, and PHEV is a strong move.<br/>
+                    • <strong>Alternative:</strong> Invest that $25,000 in Geely Auto (HKG: 0175) or a diversified luxury automotive ETF instead. Minimize single-stock risk.
+                `,
+                html: `
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="border-b border-zinc-800 pb-3">
+                            <span class="text-xs text-gold uppercase tracking-widest font-bold">Strategic Recommendation</span>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white">Should We Invest $25,000?</h2>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-5 my-auto items-stretch">
+                            <!-- Left: Large Negative Verdict -->
+                            <div class="md:col-span-5 bg-red-950/15 border border-red-900/60 rounded-lg p-5 flex flex-col justify-center items-center text-center">
+                                <span class="text-4xl">❌</span>
+                                <h3 class="text-2xl font-black text-red-500 mt-2">DO NOT INVEST</h3>
+                                <p class="text-lg font-bold text-white mt-1">Allocation: $0</p>
+                                <div class="mt-4 text-[10px] text-zinc-500 uppercase tracking-widest bg-zinc-950/60 px-3 py-1 rounded">
+                                    High Startup Turnaround Risk
+                                </div>
+                            </div>
+                            
+                            <!-- Right: Two Columns of Pros vs Cons -->
+                            <div class="md:col-span-7 grid grid-cols-2 gap-3 text-xs">
+                                <div class="bg-zinc-900 p-3 rounded-lg border border-zinc-800/80">
+                                    <h4 class="font-bold text-red-400 uppercase tracking-widest text-[10px] mb-2 border-b border-red-900/25 pb-1">The Core Risks</h4>
+                                    <ul class="space-y-1.5 text-[11px] text-zinc-300">
+                                        <li>• $464M losses limits debt servicing</li>
+                                        <li>• -44% YoY revenue is the wrong path</li>
+                                        <li>• High equity dilution risks</li>
+                                        <li>• Pure EV retreat damages brand trust</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-zinc-900 p-3 rounded-lg border border-zinc-800/80">
+                                    <h4 class="font-bold text-emerald-400 uppercase tracking-widest text-[10px] mb-2 border-b border-emerald-900/25 pb-1">The Bull Arguments</h4>
+                                    <ul class="space-y-1.5 text-[11px] text-zinc-300">
+                                        <li>• Net loss improved by 58% YoY</li>
+                                        <li>• Margin expansion (3% to 9%)</li>
+                                        <li>• Solid Geely corporate safety net</li>
+                                        <li>• 85% upside potential to consensus</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alternative Deployment Suggestion -->
+                        <div class="bg-zinc-950 p-3 rounded-lg border border-zinc-900 flex justify-between items-center text-xs">
+                            <span class="text-gold font-bold uppercase tracking-wider text-[10px]">Alternate Portfolio Allocation</span>
+                            <p class="text-zinc-400 text-right text-[11px]">Deploy $25k to <strong class="text-white">Geely Auto (HKG: 0175)</strong> or a <strong class="text-white">diversified EV index</strong> for safer growth.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 11,
+                title: "Future Strategic Plan",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (12:15 - 13:30)</strong><br/>
+                    • <strong>Three Pillars:</strong> First, Dual Powertrain (BEV + PHEV). Second, Financial Sustainability (30,000 units target). Third, One Lotus (re-integrating UK and Tech division).<br/>
+                    • <strong>Top Actionable Items:</strong> <br/>
+                    1. Double down on PHEVs (perfect hedge).<br/>
+                    2. Urgently expand the retail/service network.<br/>
+                    3. Spend on Formula 1 branding and vintage racing storytelling (high return on investment).<br/>
+                    4. Protect development of Type 135 sports car.<br/>
+                    5. Expand Engineering consultancy to 20% of net revenue by 2028.
+                `,
+                html: `
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="border-b border-zinc-800 pb-2">
+                            <span class="text-xs text-gold uppercase tracking-widest font-bold">Future Horizon</span>
+                            <h2 class="text-2xl font-extrabold text-white">Lotus 2026–2028: Pillars of Survival</h2>
+                        </div>
+                        
+                        <!-- 3 Pillars Row -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 my-auto text-xs">
+                            <div class="bg-zinc-900/80 p-3 rounded-lg border border-zinc-800/80">
+                                <span class="text-2xl block mb-1">🔌</span>
+                                <h4 class="font-bold text-white mb-1">1. Dual Powertrains</h4>
+                                <p class="text-[10px] text-zinc-400">Deploy Eletre X PHEV alongside premium light battery EV sports cars.</p>
+                            </div>
+                            <div class="bg-zinc-900/80 p-3 rounded-lg border border-zinc-800/80">
+                                <span class="text-2xl block mb-1">📊</span>
+                                <h4 class="font-bold text-white mb-1">2. Financial Stability</h4>
+                                <p class="text-[10px] text-zinc-400">Scale volume to 30k units/yr. Reach positive cash flow in 2026.</p>
+                            </div>
+                            <div class="bg-zinc-900/80 p-3 rounded-lg border border-zinc-800/80">
+                                <span class="text-2xl block mb-1">🌐</span>
+                                <h4 class="font-bold text-white mb-1">3. Unified Brand</h4>
+                                <p class="text-[10px] text-zinc-400">Fully integrate R&D, governance, and manufacturing globally.</p>
+                            </div>
+                        </div>
+
+                        <!-- Ordered Action Plan -->
+                        <div class="bg-zinc-950 p-3 rounded-lg border border-zinc-900">
+                            <span class="text-[10px] text-gold uppercase tracking-widest block mb-1.5 font-bold">Strategic Recommendations</span>
+                            <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-[10px] text-zinc-300">
+                                <div class="p-1 bg-zinc-900 rounded border border-zinc-800"><strong class="text-white block">1. PHEV Hedge</strong>Bridge gap to EV</div>
+                                <div class="p-1 bg-zinc-900 rounded border border-zinc-800"><strong class="text-white block">2. Scale Stores</strong>Increase footprint</div>
+                                <div class="p-1 bg-zinc-900 rounded border border-zinc-800"><strong class="text-white block">3. F1 Branding</strong>Leverage pedigree</div>
+                                <div class="p-1 bg-zinc-900 rounded border border-zinc-800"><strong class="text-white block">4. Type 135</strong>Pure EV sports</div>
+                                <div class="p-1 bg-zinc-900 rounded border border-zinc-800"><strong class="text-white block">5. IP Consult</strong>Grow to 20% revenue</div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 12,
+                title: "Conclusion",
+                speakerNotes: `
+                    <strong>SPEAKER CUES & TIMING (13:30 - 15:00)</strong><br/>
+                    • <strong>Wrap-up:</strong> The Soul is right—they are highly differentiated. However, the balance sheet remains weak and must improve.<br/>
+                    • <strong>Closing Quote:</strong> "Simplify, then add lightness"—the formula that built Lotus since 1948 will hopefully save it during this transition.<br/>
+                    • <strong>Final Slide Action:</strong> Open the floor up for questions. Introduce group members if applicable.
+                `,
+                html: `
+                    <div class="h-full flex flex-col justify-between text-center py-4">
+                        <div class="border-b border-zinc-900 pb-2">
+                            <span class="text-xs text-gold uppercase tracking-widest font-bold">Summary</span>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white">Lotus: The Soul Is Right. <br/>The Balance Sheet Is Not (Yet).</h2>
+                        </div>
+                        
+                        <!-- Highlighted Quote Section -->
+                        <div class="my-auto max-w-2xl mx-auto space-y-4">
+                            <div class="bg-zinc-900/60 p-4 rounded-xl border border-zinc-800/80">
+                                <p class="text-md md:text-lg italic text-zinc-100">
+                                    "Simplify, then add lightness — the philosophy that built Lotus may also save it."
+                                </p>
+                                <span class="block text-xs text-gold uppercase tracking-widest mt-2 font-mono">— Colin Chapman, 1948</span>
+                            </div>
+                            
+                            <p class="text-xs text-zinc-400 max-w-lg mx-auto">
+                                The transition to high-performance hybrids gives Lotus a much-needed bridge. They must scale to 30,000 units before capital running costs deplete Geely's goodwill.
+                            </p>
+                        </div>
+
+                        <!-- Footer Team Credits -->
+                        <div class="border-t border-zinc-900 pt-3 flex justify-between items-end text-left">
+                            <div>
+                                <span class="text-[9px] text-zinc-500 uppercase tracking-widest block">Presenter</span>
+                                <span class="text-xs font-bold text-white">Davit Goginashvili</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[9px] text-zinc-500 uppercase tracking-widest block">Class</span>
+                                <span class="text-xs font-bold text-zinc-400">Strategic Management Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        ];
+
+        // Active State variables
+        let currentSlideIndex = 0;
+        let isSpeakerNotesVisible = true;
+        let autoplayInterval = null;
+        let timerSeconds = 0;
+        let timerInterval = null;
+
+        // Dom Elements Cached
+        const slideViewport = document.getElementById('slide-viewport');
+        const slideIndicator = document.getElementById('slide-indicator');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const autoplayBtn = document.getElementById('autoplay-btn');
+        const navDotsContainer = document.getElementById('nav-dots');
+        const speakerNotesPanel = document.getElementById('speaker-notes-panel');
+        const speakerNotesContent = document.getElementById('speaker-notes-content');
+        const speakerNotesToggle = document.getElementById('speaker-notes-toggle');
+        const presentationTimer = document.getElementById('presentation-timer');
+        const resetTimerBtn = document.getElementById('reset-timer');
+
+        // Initialize Slides & Navigation dots
+        function initApp() {
+            // Build visual progress navigation dots
+            navDotsContainer.innerHTML = '';
+            SLIDES.forEach((slide, idx) => {
+                const dot = document.createElement('button');
+                dot.className = `w-7 h-2 rounded transition-all duration-300 ${idx === 0 ? 'bg-gold w-10' : 'bg-zinc-800 hover:bg-zinc-600'}`;
+                dot.title = `Go to Slide ${idx + 1}: ${slide.title}`;
+                dot.onclick = () => jumpToSlide(idx);
+                navDotsContainer.appendChild(dot);
+            });
+
+            // Set up Slide
+            renderSlide();
+            startTimer();
+
+            // Setup listeners
+            prevBtn.onclick = handlePrev;
+            nextBtn.onclick = handleNext;
+            autoplayBtn.onclick = handleAutoplayToggle;
+            speakerNotesToggle.onclick = handleSpeakerNotesToggle;
+            resetTimerBtn.onclick = resetTimer;
+
+            // Arrow keys handling
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') handleNext();
+                if (e.key === 'ArrowLeft') handlePrev();
+            });
+        }
+
+        // Render Active Slide on Screen and update indicators
+        function renderSlide() {
+            const slide = SLIDES[currentSlideIndex];
+            
+            // Apply Fade Transition effect
+            slideViewport.style.opacity = 0;
+            setTimeout(() => {
+                slideViewport.innerHTML = slide.html;
+                slideViewport.style.opacity = 1;
+            }, 150);
+
+            // Update bottom pagination metadata
+            slideIndicator.innerText = `Slide ${currentSlideIndex + 1} of ${SLIDES.length}`;
+
+            // Update interactive Dots
+            Array.from(navDotsContainer.children).forEach((dot, idx) => {
+                if (idx === currentSlideIndex) {
+                    dot.className = "w-10 h-2 rounded bg-gold transition-all duration-300";
+                } else {
+                    dot.className = "w-7 h-2 rounded bg-zinc-800 hover:bg-zinc-700 transition-all duration-300";
+                }
+            });
+
+            // Update speaker guide
+            speakerNotesContent.innerHTML = slide.speakerNotes;
+
+            // Handle Prev/Next disabled limits
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === SLIDES.length - 1;
+        }
+
+        function handlePrev() {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                renderSlide();
+            }
+        }
+
+        function handleNext() {
+            if (currentSlideIndex < SLIDES.length - 1) {
+                currentSlideIndex++;
+                renderSlide();
+            } else {
+                // Wrap around at end of autoplay
+                if (autoplayInterval) {
+                    currentSlideIndex = 0;
+                    renderSlide();
+                }
+            }
+        }
+
+        function jumpToSlide(index) {
+            currentSlideIndex = index;
+            renderSlide();
+        }
+
+        // Handle Slide Autoplay loop
+        function handleAutoplayToggle() {
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+                autoplayInterval = null;
+                autoplayBtn.innerText = "Play";
+                autoplayBtn.classList.remove('bg-emerald-600', 'text-white');
+                autoplayBtn.classList.add('bg-zinc-800', 'text-gold');
+            } else {
+                autoplayInterval = setInterval(() => {
+                    handleNext();
+                }, 6000); // 6 Seconds auto slide transition
+                autoplayBtn.innerText = "Pause";
+                autoplayBtn.classList.remove('bg-zinc-800', 'text-gold');
+                autoplayBtn.classList.add('bg-emerald-600', 'text-white');
+            }
+        }
+
+        // Toggle Speaker cues pane view
+        function handleSpeakerNotesToggle() {
+            isSpeakerNotesVisible = !isSpeakerNotesVisible;
+            if (isSpeakerNotesVisible) {
+                speakerNotesPanel.classList.remove('hidden');
+                speakerNotesToggle.innerHTML = `
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                    <span>Speaker Notes (ON)</span>
+                `;
+            } else {
+                speakerNotesPanel.classList.add('hidden');
+                speakerNotesToggle.innerHTML = `
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    <span>Speaker Notes (OFF)</span>
+                `;
+            }
+        }
+
+        // Practical stopwatch timer for checking academic length goals
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timerSeconds++;
+                const mins = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+                const secs = (timerSeconds % 60).toString().padStart(2, '0');
+                presentationTimer.innerText = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function resetTimer() {
+            timerSeconds = 0;
+            presentationTimer.innerText = "00:00";
+        }
+
+        // Run application on load
+        window.onload = initApp;
+    </script>
+</body>
+</html>
